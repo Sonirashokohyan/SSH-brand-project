@@ -1,25 +1,18 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
-    # path('', views.members, name='members'),
-    path('members/', views.members, name='members'),
-    path('members/index', views.index, name='index'),
-    path('members/index/shop', views.shop, name='shop'),
-    path('members/index/about', views.about, name='about'),
-    path('members/index/contact', views.contact, name='contact'),
-    path('members/index/men', views.men, name='men'),
-    path('members/index/women', views.women, name='women'),
-    path('members/details/<int:id>', views.details, name='details'),
+    path('', views.home, name='members'),
+    path('home/about/', views.about, name='about'),
+    path('home/contact/', views.contact, name='contact'),
+    path('home/men/', views.men, name='men'),
+    path('home/women/', views.women, name='women'),
+    path('details/<detid>/', views.property, name='property'),
 
-    # path('members/sonira', views.sonira, name='members.sonira'),
-    # path('members/fariha', views.fariha, name='members.fariha'),
-    # path('members/freshta', views.freshta, name='members.freshta'),
-    # path('members/maryam', views.maryam, name='members.maryam'),
-    # path('members/khujesta', views.khujesta, name='members.khujesta'),
-    # path('members/karima', views.karima, name='members.karima'),
-    # path('members/mursal', views.mursal, name='members.mursal'),
-    # path('members/nazanin', views.nazanin, name='members.nazanin'),
-    # path('members/zahra', views.zahra, name='members.zahra'),
-    # path('members/frohar', views.frohar, name='members.frohar'),
 ]
+
+if settings.DEBUG:
+    urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

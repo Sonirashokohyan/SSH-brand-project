@@ -1,61 +1,42 @@
-from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.shortcuts import render
 from .models import Member
+from .models import contact_model
 
-def members(request):
-  mymembers = Member.objects.all().values()
-  template = loader.get_template('all_members.html')
-  context = {
-    'mymembers': mymembers,
+def home(request):
+  properties=Member.objects.all().order_by('id')
+  Data={
+    'properties': properties
   }
-  return HttpResponse(template.render(context, request))
+  return render(request,"index.html",Data)
 
-
-def details(request, id):
-  mymember = Member.objects.get(id=id)
-  template = loader.get_template('details.html')
-  context = {
-    'mymember': mymember,
+def property(request,detid):
+  property_details=Member.objects.get(id=detid)
+  data={
+    'property_details':property_details
   }
-  return HttpResponse(template.render(context, request))
+  return render(request,"property.html",data)
 
+def contact(request):
+  return render(request,"contact.html")
 
+def men(request):
+  return render(request,"men.html")
 
+def women(request):
+  return render(request,"women.html")
 
-def index(request):
-  template = loader.get_template('index.html')
-  return HttpResponse(template.render())
-
-def shop(request):
-  template = loader.get_template('shop.html')
-  return HttpResponse(template.render())
+def savecontact(request):
+  if request.method=='POST':
+    fullname=request.POST.get('fullname')
+    email=request.POST.get('email')
+    subject=request.POST.get('subject')
+    message=request.POST.get('message')
+    contact_= contact_model(full_name=fullname,email=email,subject=subject,message=message)
+    contact_.save()
+  return render(request,'contact.html')
 
 def about(request):
   template = loader.get_template('about.html')
   return HttpResponse(template.render())
-
-def contact(request):
-  template = loader.get_template('contact.html')
-  return HttpResponse(template.render())
-
-def men(request):
-  template = loader.get_template('men.html')
-  return HttpResponse(template.render())
-
-def women(request):
-  template = loader.get_template('women.html')
-  return HttpResponse(template.render())
-
-
-
-
-
-
-
-
-
-
-# def sonira(request):
-#     return HttpResponse("Hello sonira (1)!")
-

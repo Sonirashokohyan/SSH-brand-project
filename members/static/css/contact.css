@@ -35,8 +35,8 @@ a{
     font-size: 3.5rem;
 }
 
-.text-black{
-    color: #333333;
+.text-dark{
+    color: #6e2b2b;
 }
 
 .text-gray{
@@ -66,10 +66,12 @@ a{
 }
 
 .form-wrapper .company-address img{
-    max-width: 90%;
-    min-height: 30rem;
+    /* max-width: 90%;
+    min-height: 20rem;
     object-fit: cover;
-    object-position: right;
+    object-position: right; */
+    width: 50rem;
+    height: 40rem;
 }
 .form-wrapper::after{
     content: '';
@@ -93,7 +95,7 @@ a{
     content: '';
     width: 100%;
     display: block;
-    border: 3px solid #263238;
+    border: 3px solid #6e2b2b;
  }
 
  .form-wrapper .form label{
@@ -110,7 +112,7 @@ a{
 
  .form-wrapper .form label::after{
     content: '* ';
-    color: #263238;
+    color: #6e2b2b;
 
  }
 
@@ -128,9 +130,10 @@ a{
     display: block;
     margin: 0 auto;
     padding: 0.5em 3em;
+    border-radius: 50px;
     font-size: 1.8rem;
     text-transform: uppercase;
-    background: #263238;
+    background: #6e2b2b;
     color: #f4f4f4;
     outline: none;
     border: none;

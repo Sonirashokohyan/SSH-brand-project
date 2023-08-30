@@ -101,7 +101,7 @@ body{
     color: #6e2b2b;
 }
 
-/* ########### show case style########## */
+/* ######################## show case style################### */
 .showcase-area{
     height: 94vh;
     background: linear-gradient(rgba(18, 18, 18, 0.144), rgba(32, 31, 31, 0.336)),url("/static/images/cover.jpg");
@@ -133,7 +133,7 @@ body{
     margin: 1em;
 }
 
-/* ############# about us ############# */
+/* ########################### about us ############################ */
 #about{
     padding: 50px 0px;
     background: #f5f5f7;
@@ -221,6 +221,7 @@ body{
     object-fit: cover;
     object-position: center;
  }
+
  .img-container{
     margin: 0 1rem;
     position: relative;
@@ -355,6 +356,135 @@ body{
     color: #fff;
     background: rgb(65, 65, 65);
 }
+
+.shop-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ########################### about us ############################ */
+.information{
+    padding: 50px 0px;
+    background: #fff;
+    height: 95vh;
+    /* width: 50vw; */
+    margin: 5rem  auto;
+
+}
+.info-text{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.info-text h1{
+    font-size: 3.2rem;
+    color: #6e2b2b;
+    padding: 2rem;
+}
+.info-text p{
+    font-size: 1.6rem;
+    color: #555;
+    padding-bottom: 3rem;
+}
+
+.info-data{
+    font-size: 1.7rem;
+    padding: 5rem;
+    color: #571d1d;
+    display: inline-block;
+}
+.info-data a{
+    text-decoration: none;
+    padding: 1.5rem;
+    color: #555;
+}
+.info-data li{
+    list-style-type: none;
+}
+
+.info-data a:hover{
+    background-color: #571d1d;
+    color: #fff;
+    padding: 0.4rem;
+    border-radius: 10%;
+}
+/* #########################.properties ######################### */
+.latest-product h1{
+    color: #571d1d;
+    text-align: center;
+    padding: 5rem;
+}
+
+
+.properties {
+    border-radius: 2rem;
+  }
+  .properties-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, auto));
+    gap: 12rem;
+    padding: 0.5px;
+  }
+  .properties-container .box {
+    padding: 10px;
+    border-radius: 1rem;
+  }
+  .properties-container .box:hover {
+    transform: translatey(-10px);
+    transition: 0.5s;
+  }
+  .properties-container .box img {
+    border-radius: 1rem;
+    height: 220px;
+    width: 250px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .properties-container .box h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    float: right;
+  }
+  .properties-container .box .content {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+  }
+  .properties-container .box .content .text h3 {
+    font-weight: 500;
+  }
+  .properties-container .box .content .text p {
+    font-size: 0.8rem;
+  }
+  .properties-container .box .content .icon {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+  }
+  .properties-container .box .content .icon .bx {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+  }
+  .properties-container .box .content .icon span {
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 4px;
+  }
+  .box .rent h3 {
+    border: 2px solid #090909;
+    border-radius: 10%;
+    padding: 0.3rem 0.7rem;
+    margin: 0rem 0.3rem 0.5rem 0;
+    color: #000;
+  }
+
+
 
 /* ############ media queris ############### */
 @media (max-width: 768px){
@@ -491,4 +621,11 @@ body{
         flex-direction: column;
         text-align: center;
     }
+    .properties-container{
+        margin: auto;
+        flex-direction: column;
+        text-align: center;
+    }
+
 }
+
